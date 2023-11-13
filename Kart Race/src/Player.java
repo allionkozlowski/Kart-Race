@@ -11,35 +11,37 @@ public class Player
 			coins = c;
 			kart = k;
 		}
-		
+
 		public String getName()
-		{
-			return name;
-		}
-		
-		public void setName()
-		{
-			this.name = name;
-		}
-		
+			{
+				return name;
+			}
+
+		public void setName(String name)
+			{
+				this.name = name;
+			}
+
 		public int getCoins()
-		{
-			return coins;
-		}
-		
-		public void setCoins()
-		{
-			this.coins = coins;
-		}
-		
+			{
+				return coins;
+			}
+
+		public void setCoins(int coins)
+			{
+				this.coins = coins;
+			}
+
 		public Kart getKart()
-		{
-			return kart;
-		}
+			{
+				return kart;
+			}
+
+		public void setKart(Kart kart)
+			{
+				this.kart = kart;
+			}
 		
-		public void setKart()
-		{
-			this.kart = kart;
-		}
+		
 
 	}

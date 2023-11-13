@@ -15,56 +15,58 @@ public class Kart
 			turning = t;
 			color = c;
 		}
-		
+
 		public int getAcceleration()
-		{
-			return acceleration;
-		}
-		
-		public void setAcceleration()
-		{
-			this.acceleration = acceleration;
-		}
-		
+			{
+				return acceleration;
+			}
+
+		public void setAcceleration(int acceleration)
+			{
+				this.acceleration = acceleration;
+			}
+
 		public int getTopSpeed()
-		{
-			return topSpeed;
-		}
-		
-		public void setTopSpeed()
-		{
-			this.topSpeed = topSpeed;
-		}
-		
+			{
+				return topSpeed;
+			}
+
+		public void setTopSpeed(int topSpeed)
+			{
+				this.topSpeed = topSpeed;
+			}
+
 		public int getBraking()
-		{
-			return braking;
-		}
-		
-		public void setBraking()
-		{
-			this.braking = braking;
-		}
-		
+			{
+				return braking;
+			}
+
+		public void setBraking(int braking)
+			{
+				this.braking = braking;
+			}
+
 		public int getTurning()
-		{
-			return turning;
-		}
-		
-		public void setTurning()
-		{
-			this.turning = turning;
-		}
-		
+			{
+				return turning;
+			}
+
+		public void setTurning(int turning)
+			{
+				this.turning = turning;
+			}
+
 		public String getColor()
-		{
-			return color;
-		}
-			
-		public void setColor()
-		{
-			this.color = color;
-		}
+			{
+				return color;
+			}
+
+		public void setColor(String color)
+			{
+				this.color = color;
+			}
+		
+		
 		
 
 	}
