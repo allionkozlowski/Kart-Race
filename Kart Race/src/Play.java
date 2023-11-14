@@ -4,12 +4,16 @@ import java.util.Scanner;
 public class Play
 	{
 		static ArrayList<Player> players = new ArrayList<Player>();
+		static ArrayList<Kart> karts = new ArrayList<Kart>();
+		static String [][] course1 = new String [15][29];
+		static ArrayList<String> courseOption1 = new ArrayList<String>();
 		
 		public static void main(String[] args)
 			{
 				gameSetup();
 				player1Kart();
-				//courseOption1();
+				player2Kart();
+				playCourse1();
 
 			}
 		public static void gameSetup()
@@ -22,13 +26,8 @@ public class Play
 				System.out.println("Player2: What is your name?");
 				String name2 = userInput.nextLine();
 				
-				
 				players.add(new Player(name1, 0, new Kart(0,0,0,0,"black")));
-				players.add(new Player(name2, 0, new Kart(0,0,0,0,"black"))); 
-				
-				
-				
-				
+				players.add(new Player(name2, 0, new Kart(0,0,0,0,"black"))); 	
 				
 			}
 		
@@ -73,22 +72,70 @@ public class Play
 			System.out.println("Turning Speed:");
 			int turningSpeed1 = userInput.nextInt();
 			
-			if(acceleration1 == 1)
-				{
-					players.get(0).setKart( kart.getKart().setAcceleration(1)); //create an arraylist of karts and put this into here with the whole kart
-				}
+			karts.add(new Kart(acceleration1, topSpeed1, braking1, turningSpeed1, "blue"));
+			
+			players.get(0).setKart(karts.get(0));
+			
 		}
-
-		public static void courseOption1()
+		
+		public static void player2Kart()
 		{
-			String [][] course1 = new String [15][29];
+			Scanner userInput = new Scanner(System.in);
+			
+			System.out.println("");
+			System.out.println("Each of you have 550 coins to spend to make your kart.");
+			System.out.println("Here is the shop:");
+			System.out.println("Acceleration: ");
+			System.out.println("1) 2 sec [200 coins]");
+			System.out.println("2) 4 sec [150 coins]");
+			System.out.println("3) 6 sec [100 coins]");
+			System.out.println("2) 8 sec [50 coins]");
+			System.out.println(" ");
+			System.out.println("Top Speed: ");
+			System.out.println("1) 180 mph [200 coins]");
+			System.out.println("2) 160 mph [150 coins]");
+			System.out.println("3) 140 mph [100 coins]");
+			System.out.println("2) 120 mph [50 coins]");
+			System.out.println();
+			System.out.println("Braking: ");
+			System.out.println("1) 2 sec [200 coins]");
+			System.out.println("2) 4 sec [150 coins]");
+			System.out.println("3) 6 sec [100 coins]");
+			System.out.println("2) 8 sec [50 coins]");
+			System.out.println();
+			System.out.println("Turning Speed: ");
+			System.out.println("1) 180 mph [200 coins]");
+			System.out.println("2) 160 mph [150 coins]");
+			System.out.println("3) 140 mph [100 coins]");
+			System.out.println("2) 120 mph [50 coins]");
+
+			System.out.println("Player2: For each feature type the number you want.");
+			System.out.println("Acceleration:");
+			int acceleration2 = userInput.nextInt();
+			System.out.println("Top Speed:");
+			int topSpeed2 = userInput.nextInt();
+			System.out.println("Braking:");
+			int braking2 = userInput.nextInt();
+			System.out.println("Turning Speed:");
+			int turningSpeed2 = userInput.nextInt();
+			
+			karts.add(new Kart(acceleration2, topSpeed2, braking2, turningSpeed2, "purple"));
+			
+			players.get(1).setKart(karts.get(1));
+			
+		}
+		
+		public static void playCourse1()
+		{
 			for(int row=0; row<15; row++)
-				{
-					for(int col=0; col<29; col++)
-						{
-							course1[row][col] = " ";
-						}
-				}
+			{
+				for(int col=0; col<29; col++)
+					{
+						course1[row][col] = " ";
+					}
+			}
+			course1[0][0] = "X";
+			course1[1][0] = "X";
 			
 			System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
 			System.out.println(" "+course1[0][0]+" "+course1[0][1]+" "+course1[0][2]+" "+course1[0][3]+" "+course1[0][4]+" "+course1[0][5]+" "+course1[0][6]+" "+course1[0][7]+" "+course1[0][8]+" "+course1[0][9]+" "+course1[0][10]+" "+course1[0][11]+" "+course1[0][12]+" "+course1[0][13]+" "+course1[0][14]+" "+course1[0][15]+" "+course1[0][16]+" "+course1[0][17]+" "+course1[0][18]+" "+course1[0][19]+" "+course1[0][20]+" "+course1[0][21]+" "+course1[0][22]+" "+course1[0][23]+" "+course1[0][24]+" "+course1[0][25]+" "+course1[0][26]+" "+course1[0][27]+" "+course1[0][28]+" |");
@@ -106,6 +153,10 @@ public class Play
 			System.out.println("             | "+course1[10][8]+" "+course1[10][9]+" "+course1[10][10]+" "+course1[10][11]+" "+course1[10][12]+" "+course1[10][13]+" "+course1[10][14]+" "+course1[10][15]+" "+course1[10][16]+" "+course1[10][17]+" "+course1[10][18]+" "+course1[10][19]+" "+course1[10][20]+" |");
 			System.out.println("             | "+course1[11][8]+" "+course1[11][9]+" "+course1[11][10]+" "+course1[11][11]+" "+course1[11][12]+" "+course1[11][13]+" "+course1[11][14]+" "+course1[11][15]+" "+course1[11][16]+" "+course1[11][17]+" "+course1[11][18]+" "+course1[11][19]+" "+course1[11][20]+" |");
 			System.out.println("             |_ _ _ _ _ _ _ _ _ _ _ _ _ _|");
+			
+			
+			
+			
 			
 		}
 		
