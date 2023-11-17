@@ -10,7 +10,6 @@ public class Play
 		
 		static int kartNumberPlayer1 = 0;
 		static int kartNumberPlayer2 = 0;
-		static int turnPlayer1 = 0;
 		
 		public static void main(String[] args)
 			{
@@ -40,7 +39,7 @@ public class Play
 			Scanner userInput = new Scanner(System.in);
 			
 			System.out.println("");
-			System.out.println("Each of you have 550 coins to spend to make your kart.");
+			System.out.println("You have 550 coins to spend to make your kart.");
 			System.out.println("Here is the shop:");
 			System.out.println("Acceleration: ");
 			System.out.println("1) 2 sec [200 coins]");
@@ -187,7 +186,7 @@ public class Play
 			Scanner userInput = new Scanner(System.in);
 			
 			System.out.println("");
-			System.out.println("Each of you have 550 coins to spend to make your kart.");
+			System.out.println("You have 550 coins to spend to make your kart.");
 			System.out.println("Here is the shop:");
 			System.out.println("Acceleration: ");
 			System.out.println("1) 2 sec [200 coins]");
@@ -331,6 +330,8 @@ public class Play
 		
 		public static void playCourse1()
 		{
+			Scanner userInput = new Scanner(System.in);
+			
 			for(int row=0; row<15; row++)
 			{
 				for(int col=0; col<29; col++)
@@ -338,16 +339,19 @@ public class Play
 						course1[row][col] = " ";
 					}
 			}
-			course1[0][0] = "X";
-			course1[1][0] = "X";
-			System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n "+course1[0][0]+" "+course1[0][1]+" "+course1[0][2]+" "+course1[0][3]+" "+course1[0][4]+" "+course1[0][5]+" "+course1[0][6]+" "+course1[0][7]+" "+course1[0][8]+" "+course1[0][9]+" "+course1[0][10]+" "+course1[0][11]+" "+course1[0][12]+" "+course1[0][13]+" "+course1[0][14]+" "+course1[0][15]+" "+course1[0][16]+" "+course1[0][17]+" "+course1[0][18]+" "+course1[0][19]+" "+course1[0][20]+" "+course1[0][21]+" "+course1[0][22]+" "+course1[0][23]+" "+course1[0][24]+" "+course1[0][25]+" "+course1[0][26]+" "+course1[0][27]+" "+course1[0][28]+" |\n "+course1[1][0]+" "+course1[1][1]+" "+course1[1][2]+" "+course1[1][3]+" "+course1[1][4]+" "+course1[1][5]+" "+course1[1][6]+" "+course1[1][7]+" "+course1[1][8]+" "+course1[1][9]+" "+course1[1][10]+" "+course1[1][11]+" "+course1[1][12]+" "+course1[1][13]+" "+course1[1][14]+" "+course1[1][15]+" "+course1[1][16]+" "+course1[1][17]+" "+course1[1][18]+" "+course1[1][19]+" "+course1[1][20]+" "+course1[1][21]+" "+course1[1][22]+" "+course1[1][23]+" "+course1[1][24]+" "+course1[1][25]+" "+course1[1][26]+" "+course1[1][27]+" "+course1[1][28]+" |\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _      |\n                                                     | "+course1[2][27]+" "+course1[2][28]+ " |\n                                                     | "+course1[3][27]+" "+course1[3][28]+ " |\n              _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _| "+course1[4][27]+" "+course1[4][28]+ " |\n             | "+course1[5][8]+" "+course1[5][9]+" "+course1[5][10]+" "+course1[5][11]+" "+course1[5][12]+" "+course1[5][13]+" "+course1[5][14]+" "+course1[5][15]+" "+course1[5][16]+" "+course1[5][17]+" "+course1[5][18]+" "+course1[5][19]+" "+course1[5][20]+" "+course1[5][21]+" "+course1[5][22]+" "+course1[5][23]+" "+course1[5][24]+" "+course1[5][25]+" "+course1[5][26]+" "+course1[5][27]+" "+course1[5][28]+" "+course1[5][28]+" |\n             | "+course1[6][8]+" "+course1[6][9]+" "+course1[6][10]+" "+course1[6][11]+" "+course1[6][12]+" "+course1[6][13]+" "+course1[6][14]+" "+course1[6][15]+" "+course1[6][16]+" "+course1[6][17]+" "+course1[6][18]+" "+course1[6][19]+" "+course1[6][20]+" "+course1[6][21]+" "+course1[6][22]+" "+course1[6][23]+" "+course1[6][24]+" "+course1[6][25]+" "+course1[6][26]+" "+course1[6][27]+" "+course1[6][28]+" "+course1[6][28]+" |\n             |      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|\n             | "+course1[7][8]+" "+course1[7][9]+" |\n             | "+course1[8][8]+" "+course1[8][9]+" |\n             | "+course1[9][8]+" "+course1[9][9]+" |_ _ _ _ _ _ _ _ _ _ _\n             | "+course1[10][8]+" "+course1[10][9]+" "+course1[10][10]+" "+course1[10][11]+" "+course1[10][12]+" "+course1[10][13]+" "+course1[10][14]+" "+course1[10][15]+" "+course1[10][16]+" "+course1[10][17]+" "+course1[10][18]+" "+course1[10][19]+" "+course1[10][20]+" |\n             | "+course1[11][8]+" "+course1[11][9]+" "+course1[11][10]+" "+course1[11][11]+" "+course1[11][12]+" "+course1[11][13]+" "+course1[11][14]+" "+course1[11][15]+" "+course1[11][16]+" "+course1[11][17]+" "+course1[11][18]+" "+course1[11][19]+" "+course1[11][20]+" |\n             |_ _ _ _ _ _ _ _ _ _ _ _ _ _|");
 			
-			
-			for(int turn =1; turn<26; turn++)
+			int turn = 0;
+			boolean stillRacing =  true;
+			while(stillRacing == true)
 			{
 				if(kartNumberPlayer1 == 1)
 				{
-					if(turn == 1)
+					if(turn == 0)
+						{
+							course1[0][0] = "X";
+							course1[1][0] = "X";
+						}
+					else if(turn == 1)
 						{
 							course1[0][4] = "X";
 							course1[0][0] = " ";
@@ -453,12 +457,16 @@ public class Play
 							course1[10][19] = "X";
 							course1[10][16] = " ";																																																																		
 						}
-					String courseOne = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n "+course1[0][0]+" "+course1[0][1]+" "+course1[0][2]+" "+course1[0][3]+" "+course1[0][4]+" "+course1[0][5]+" "+course1[0][6]+" "+course1[0][7]+" "+course1[0][8]+" "+course1[0][9]+" "+course1[0][10]+" "+course1[0][11]+" "+course1[0][12]+" "+course1[0][13]+" "+course1[0][14]+" "+course1[0][15]+" "+course1[0][16]+" "+course1[0][17]+" "+course1[0][18]+" "+course1[0][19]+" "+course1[0][20]+" "+course1[0][21]+" "+course1[0][22]+" "+course1[0][23]+" "+course1[0][24]+" "+course1[0][25]+" "+course1[0][26]+" "+course1[0][27]+" "+course1[0][28]+" |\n "+course1[1][0]+" "+course1[1][1]+" "+course1[1][2]+" "+course1[1][3]+" "+course1[1][4]+" "+course1[1][5]+" "+course1[1][6]+" "+course1[1][7]+" "+course1[1][8]+" "+course1[1][9]+" "+course1[1][10]+" "+course1[1][11]+" "+course1[1][12]+" "+course1[1][13]+" "+course1[1][14]+" "+course1[1][15]+" "+course1[1][16]+" "+course1[1][17]+" "+course1[1][18]+" "+course1[1][19]+" "+course1[1][20]+" "+course1[1][21]+" "+course1[1][22]+" "+course1[1][23]+" "+course1[1][24]+" "+course1[1][25]+" "+course1[1][26]+" "+course1[1][27]+" "+course1[1][28]+" |\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _      |\n                                                     | "+course1[2][27]+" "+course1[2][28]+ " |\n                                                     | "+course1[3][27]+" "+course1[3][28]+ " |\n              _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _| "+course1[4][27]+" "+course1[4][28]+ " |\n             | "+course1[5][7]+" "+course1[5][8]+" "+course1[5][9]+" "+course1[5][10]+" "+course1[5][11]+" "+course1[5][12]+" "+course1[5][13]+" "+course1[5][14]+" "+course1[5][15]+" "+course1[5][16]+" "+course1[5][17]+" "+course1[5][18]+" "+course1[5][19]+" "+course1[5][20]+" "+course1[5][21]+" "+course1[5][22]+" "+course1[5][23]+" "+course1[5][24]+" "+course1[5][25]+" "+course1[5][26]+" "+course1[5][27]+" "+course1[5][28]+" |\n             | "+course1[6][7]+" "+course1[6][8]+" "+course1[6][9]+" "+course1[6][10]+" "+course1[6][11]+" "+course1[6][12]+" "+course1[6][13]+" "+course1[6][14]+" "+course1[6][15]+" "+course1[6][16]+" "+course1[6][17]+" "+course1[6][18]+" "+course1[6][19]+" "+course1[6][20]+" "+course1[6][21]+" "+course1[6][22]+" "+course1[6][23]+" "+course1[6][24]+" "+course1[6][25]+" "+course1[6][26]+" "+course1[6][27]+" "+course1[6][28]+" |\n             |      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|\n             | "+course1[7][7]+" "+course1[7][8]+" |\n             | "+course1[8][7]+" "+course1[8][8]+" |\n             | "+course1[9][7]+" "+course1[9][8]+" |_ _ _ _ _ _ _ _ _ _ _\n             | "+course1[10][7]+" "+course1[10][8]+" "+course1[10][9]+" "+course1[10][10]+" "+course1[10][11]+" "+course1[10][12]+" "+course1[10][13]+" "+course1[10][14]+" "+course1[10][15]+" "+course1[10][16]+" "+course1[10][17]+" "+course1[10][18]+" "+course1[10][19]+" |\n             | "+course1[11][7]+" "+course1[11][8]+" "+course1[11][9]+" "+course1[11][10]+" "+course1[11][11]+" "+course1[11][12]+" "+course1[11][13]+" "+course1[11][14]+" "+course1[11][15]+" "+course1[11][16]+" "+course1[11][17]+" "+course1[11][18]+" "+course1[11][19]+" |\n             |_ _ _ _ _ _ _ _ _ _ _ _ _ _|";
-					System.out.println(courseOne);
+					
 				}
 				else if(kartNumberPlayer1 == 2)
 				{
-					if(turn == 1)
+					if(turn == 0)
+						{
+							course1[0][0] = "X";
+							course1[1][0] = "X";
+						}
+					else if(turn == 1)
 						{
 							course1[0][4] = "X";
 							course1[0][0] = " ";
@@ -579,10 +587,138 @@ public class Play
 							course1[10][19] = "X";
 							course1[10][17] = " ";																																																																		
 						}
-					String courseOne = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n "+course1[0][0]+" "+course1[0][1]+" "+course1[0][2]+" "+course1[0][3]+" "+course1[0][4]+" "+course1[0][5]+" "+course1[0][6]+" "+course1[0][7]+" "+course1[0][8]+" "+course1[0][9]+" "+course1[0][10]+" "+course1[0][11]+" "+course1[0][12]+" "+course1[0][13]+" "+course1[0][14]+" "+course1[0][15]+" "+course1[0][16]+" "+course1[0][17]+" "+course1[0][18]+" "+course1[0][19]+" "+course1[0][20]+" "+course1[0][21]+" "+course1[0][22]+" "+course1[0][23]+" "+course1[0][24]+" "+course1[0][25]+" "+course1[0][26]+" "+course1[0][27]+" "+course1[0][28]+" |\n "+course1[1][0]+" "+course1[1][1]+" "+course1[1][2]+" "+course1[1][3]+" "+course1[1][4]+" "+course1[1][5]+" "+course1[1][6]+" "+course1[1][7]+" "+course1[1][8]+" "+course1[1][9]+" "+course1[1][10]+" "+course1[1][11]+" "+course1[1][12]+" "+course1[1][13]+" "+course1[1][14]+" "+course1[1][15]+" "+course1[1][16]+" "+course1[1][17]+" "+course1[1][18]+" "+course1[1][19]+" "+course1[1][20]+" "+course1[1][21]+" "+course1[1][22]+" "+course1[1][23]+" "+course1[1][24]+" "+course1[1][25]+" "+course1[1][26]+" "+course1[1][27]+" "+course1[1][28]+" |\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _      |\n                                                     | "+course1[2][27]+" "+course1[2][28]+ " |\n                                                     | "+course1[3][27]+" "+course1[3][28]+ " |\n              _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _| "+course1[4][27]+" "+course1[4][28]+ " |\n             | "+course1[5][7]+" "+course1[5][8]+" "+course1[5][9]+" "+course1[5][10]+" "+course1[5][11]+" "+course1[5][12]+" "+course1[5][13]+" "+course1[5][14]+" "+course1[5][15]+" "+course1[5][16]+" "+course1[5][17]+" "+course1[5][18]+" "+course1[5][19]+" "+course1[5][20]+" "+course1[5][21]+" "+course1[5][22]+" "+course1[5][23]+" "+course1[5][24]+" "+course1[5][25]+" "+course1[5][26]+" "+course1[5][27]+" "+course1[5][28]+" |\n             | "+course1[6][7]+" "+course1[6][8]+" "+course1[6][9]+" "+course1[6][10]+" "+course1[6][11]+" "+course1[6][12]+" "+course1[6][13]+" "+course1[6][14]+" "+course1[6][15]+" "+course1[6][16]+" "+course1[6][17]+" "+course1[6][18]+" "+course1[6][19]+" "+course1[6][20]+" "+course1[6][21]+" "+course1[6][22]+" "+course1[6][23]+" "+course1[6][24]+" "+course1[6][25]+" "+course1[6][26]+" "+course1[6][27]+" "+course1[6][28]+" |\n             |      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|\n             | "+course1[7][7]+" "+course1[7][8]+" |\n             | "+course1[8][7]+" "+course1[8][8]+" |\n             | "+course1[9][7]+" "+course1[9][8]+" |_ _ _ _ _ _ _ _ _ _ _\n             | "+course1[10][7]+" "+course1[10][8]+" "+course1[10][9]+" "+course1[10][10]+" "+course1[10][11]+" "+course1[10][12]+" "+course1[10][13]+" "+course1[10][14]+" "+course1[10][15]+" "+course1[10][16]+" "+course1[10][17]+" "+course1[10][18]+" "+course1[10][19]+" |\n             | "+course1[11][7]+" "+course1[11][8]+" "+course1[11][9]+" "+course1[11][10]+" "+course1[11][11]+" "+course1[11][12]+" "+course1[11][13]+" "+course1[11][14]+" "+course1[11][15]+" "+course1[11][16]+" "+course1[11][17]+" "+course1[11][18]+" "+course1[11][19]+" |\n             |_ _ _ _ _ _ _ _ _ _ _ _ _ _|";
-					System.out.println(courseOne);
+					
 				}
 				
+				if(kartNumberPlayer2 == 1)
+				{
+					if(turn == 0)
+						{
+							course1[0][0] = "X";
+							course1[1][0] = "X";
+						}
+					else if(turn == 1)
+						{
+							course1[1][4] = "X";
+							course1[1][0] = " ";
+						}
+					else if(turn == 2)
+						{
+							course1[1][8] = "X";
+							course1[1][4] = " ";																																																																		
+						}
+					else if(turn == 3)
+						{
+							course1[1][12] = "X";
+							course1[1][8] = " ";																																																																		
+						}
+					else if(turn == 4)
+						{
+							course1[1][16] = "X";
+							course1[1][12] = " ";																																																																		
+						}
+					else if(turn == 5)
+						{
+							course1[1][20] = "X";
+							course1[1][16] = " ";																																																																		
+						}
+					else if(turn == 6)
+						{
+							course1[1][24] = "X";
+							course1[1][20] = " ";																																																																		
+						}
+					else if(turn == 7)
+						{
+							course1[1][26] = "X";
+							course1[1][24] = " ";																																																																		
+						}
+		
+					else if(turn == 8)
+						{
+							course1[2][27] = "X";
+							course1[1][26] = " ";																																																																		
+						}
+					else if(turn == 9)
+						{
+							course1[4][27] = "X";
+							course1[2][27] = " ";																																																																		
+						}
+					else if(turn == 10)
+						{
+							course1[5][26] = "X";
+							course1[4][27] = " ";																																																																		
+						}
+					else if(turn == 11)
+						{
+							course1[5][22] = "X";
+							course1[5][26] = " ";																																																																		
+						}
+					else if(turn == 12)
+						{
+							course1[5][18] = "X";
+							course1[5][22] = " ";																																																																		
+						}
+					else if(turn == 13)
+						{
+							course1[5][14] = "X";
+							course1[5][18] = " ";																																																																		
+						}
+					else if(turn == 14)
+						{
+							course1[5][11] = "X";
+							course1[5][14] = " ";																																																																		
+						}
+					else if(turn == 15)
+						{
+							course1[5][8] = "X";
+							course1[5][11] = " ";																																																																		
+						}
+					else if(turn == 16)
+						{
+							course1[7][7] = "X";
+							course1[5][8] = " ";																																																																		
+						}
+					else if(turn == 17)
+						{
+							course1[9][7] = "X";
+							course1[7][7] = " ";																																																																		
+						}
+					else if(turn == 18)
+						{
+							course1[11][8] = "X";
+							course1[9][7] = " ";																																																																		
+						}
+					else if(turn == 19)
+						{
+							course1[11][12] = "X";
+							course1[11][8] = " ";																																																																		
+						}
+					else if(turn == 20)
+						{
+							course1[11][16] = "X";
+							course1[11][12] = " ";																																																																		
+						}
+					else if(turn == 21)
+						{
+							course1[11][19] = "X";
+							course1[11][16] = " ";																																																																		
+						}
+					
+				}
+				String courseOne = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n "+course1[0][0]+" "+course1[0][1]+" "+course1[0][2]+" "+course1[0][3]+" "+course1[0][4]+" "+course1[0][5]+" "+course1[0][6]+" "+course1[0][7]+" "+course1[0][8]+" "+course1[0][9]+" "+course1[0][10]+" "+course1[0][11]+" "+course1[0][12]+" "+course1[0][13]+" "+course1[0][14]+" "+course1[0][15]+" "+course1[0][16]+" "+course1[0][17]+" "+course1[0][18]+" "+course1[0][19]+" "+course1[0][20]+" "+course1[0][21]+" "+course1[0][22]+" "+course1[0][23]+" "+course1[0][24]+" "+course1[0][25]+" "+course1[0][26]+" "+course1[0][27]+" "+course1[0][28]+" |\n "+course1[1][0]+" "+course1[1][1]+" "+course1[1][2]+" "+course1[1][3]+" "+course1[1][4]+" "+course1[1][5]+" "+course1[1][6]+" "+course1[1][7]+" "+course1[1][8]+" "+course1[1][9]+" "+course1[1][10]+" "+course1[1][11]+" "+course1[1][12]+" "+course1[1][13]+" "+course1[1][14]+" "+course1[1][15]+" "+course1[1][16]+" "+course1[1][17]+" "+course1[1][18]+" "+course1[1][19]+" "+course1[1][20]+" "+course1[1][21]+" "+course1[1][22]+" "+course1[1][23]+" "+course1[1][24]+" "+course1[1][25]+" "+course1[1][26]+" "+course1[1][27]+" "+course1[1][28]+" |\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _      |\n                                                     | "+course1[2][27]+" "+course1[2][28]+ " |\n                                                     | "+course1[3][27]+" "+course1[3][28]+ " |\n              _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _| "+course1[4][27]+" "+course1[4][28]+ " |\n             | "+course1[5][7]+" "+course1[5][8]+" "+course1[5][9]+" "+course1[5][10]+" "+course1[5][11]+" "+course1[5][12]+" "+course1[5][13]+" "+course1[5][14]+" "+course1[5][15]+" "+course1[5][16]+" "+course1[5][17]+" "+course1[5][18]+" "+course1[5][19]+" "+course1[5][20]+" "+course1[5][21]+" "+course1[5][22]+" "+course1[5][23]+" "+course1[5][24]+" "+course1[5][25]+" "+course1[5][26]+" "+course1[5][27]+" "+course1[5][28]+" |\n             | "+course1[6][7]+" "+course1[6][8]+" "+course1[6][9]+" "+course1[6][10]+" "+course1[6][11]+" "+course1[6][12]+" "+course1[6][13]+" "+course1[6][14]+" "+course1[6][15]+" "+course1[6][16]+" "+course1[6][17]+" "+course1[6][18]+" "+course1[6][19]+" "+course1[6][20]+" "+course1[6][21]+" "+course1[6][22]+" "+course1[6][23]+" "+course1[6][24]+" "+course1[6][25]+" "+course1[6][26]+" "+course1[6][27]+" "+course1[6][28]+" |\n             |      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|\n             | "+course1[7][7]+" "+course1[7][8]+" |\n             | "+course1[8][7]+" "+course1[8][8]+" |\n             | "+course1[9][7]+" "+course1[9][8]+" |_ _ _ _ _ _ _ _ _ _ _\n             | "+course1[10][7]+" "+course1[10][8]+" "+course1[10][9]+" "+course1[10][10]+" "+course1[10][11]+" "+course1[10][12]+" "+course1[10][13]+" "+course1[10][14]+" "+course1[10][15]+" "+course1[10][16]+" "+course1[10][17]+" "+course1[10][18]+" "+course1[10][19]+" |\n             | "+course1[11][7]+" "+course1[11][8]+" "+course1[11][9]+" "+course1[11][10]+" "+course1[11][11]+" "+course1[11][12]+" "+course1[11][13]+" "+course1[11][14]+" "+course1[11][15]+" "+course1[11][16]+" "+course1[11][17]+" "+course1[11][18]+" "+course1[11][19]+" |\n             |_ _ _ _ _ _ _ _ _ _ _ _ _ _|";
+				System.out.println(courseOne);
+				System.out.println("  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n");					
+				
+				int play = userInput.nextInt();
+				if(play == 1)
+				{
+					turn++;
+				}
+				
+				if(turn == 26)
+				{
+					stillRacing = false;
+				}
 			}
 			
 				
